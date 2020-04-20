@@ -71,7 +71,7 @@ utils.defaults = function(object, source, guard) {
 };
 
 utils.isStream = function(source) {
-  return source instanceof Stream;
+  return source && typeof source.pipe === 'function'
 };
 
 utils.lazyReadStream = function(filepath) {
